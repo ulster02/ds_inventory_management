@@ -40,8 +40,17 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'clientes',
+    'Empleados',
+    'EOrdenes_Detalle',
+    'IOrdenes_Detalle',
+    'numero',
+    'Ordenes_Egreso',
+    'Ordenes_Ingreso',
     'provincias',
     'Producto_Categorias',
+    'Productos',
+    'Rol_Empleado',
+    'Proveedores'
 ]
 
 MIDDLEWARE = [
