@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'Producto_Categorias',
     'Productos',
     'Rol_Empleado',
-    'Proveedores'
+    'Proveedores',
 ]
 
 MIDDLEWARE = [
