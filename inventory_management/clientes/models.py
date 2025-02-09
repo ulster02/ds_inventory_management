@@ -11,7 +11,8 @@ class Clientes(models.Model):
     #Provincia object
     provincia_cliente = models.ForeignKey(Provincias, on_delete=models.SET_NULL, null=True)
     correo_electronico = models.EmailField()
-    num_cliente = models.ManyToManyField(Numero)
+    #Many to many field - Clientes/Numero
+    num_cliente = models.ManyToManyField(Numero, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.nom_cliente

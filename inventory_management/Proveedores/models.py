@@ -3,7 +3,7 @@ from numero.models import Numero
 
 # Create your models here.
 class Proveedores(models.Model):
-    nom_proveedor = models.CharField(max_length=65)
+    nom_proveedor = models.CharField(max_length=65, null=False)
     nom_contacto = models.CharField(max_length=65, null=True)
     correo_electronico = models.EmailField()
     direccion = models.TextField(max_length=450, null=True)
