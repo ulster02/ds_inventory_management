@@ -1,5 +1,6 @@
 from django.db import models
 from provincias.models import Provincias
+from numero.models import Numero
 
 # Create your models here.
 class Clientes(models.Model):
@@ -10,6 +11,8 @@ class Clientes(models.Model):
     #Provincia object
     provincia_cliente = models.ForeignKey(Provincias, on_delete=models.SET_NULL, null=True)
     correo_electronico = models.EmailField()
+    #Many to many field - Clientes/Numero
+    num_cliente = models.ManyToManyField(Numero,)
 
     def __str__(self):
         return self.nom_cliente
