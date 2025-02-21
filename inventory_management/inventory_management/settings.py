@@ -140,5 +140,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #CORS authorization
 CORS_ALLOWED_ORIGINS= [
-
+    
 ]
