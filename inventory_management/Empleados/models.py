@@ -8,7 +8,7 @@ class Empleado(models.Model):
     rol_empleado_FK = models.ForeignKey('Rol_Empleado', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.nom_empleado
+        return f"{self.rol_empleado_FK} - {self.nom_empleado} {self.apellidos_empleado} "
     
 class Rol_Empleado(models.Model):
     nom_rol_empleado = models.CharField(null=False, max_length=65)

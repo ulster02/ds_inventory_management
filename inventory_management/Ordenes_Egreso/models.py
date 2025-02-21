@@ -18,7 +18,7 @@ class Ordenes_Egreso(models.Model):
 class EOrdenes_Detalle(models.Model):
     eOrdenDetalle_ID = models.CharField(max_length=10, primary_key=True)
     cantidad = models.IntegerField(validators=[ MinValueValidator(1), MaxValueValidator(99)] , null=False)
-    descuento = models.DecimalField(max_digits= 8,decimal_places=2)
+    descuento = models.DecimalField(max_digits= 8,decimal_places=2, null=True)
     eOrden_ID = models.ForeignKey(Ordenes_Egreso,null=True, on_delete=models.SET_NULL)
     producto_ID = models.ForeignKey(Productos, null=True, on_delete=models.SET_NULL)
  
