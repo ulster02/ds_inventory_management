@@ -17,7 +17,7 @@ class Ordenes_Ingreso_Detalle(models.Model):
     Producto_ID = models.ForeignKey('Productos.Productos', on_delete=models.SET_NULL, null=True)
     cantidad = models.IntegerField(null=False)
     precio = models.DecimalField(max_digits=10, decimal_places=2, null=False)
-    Orden_ID = models.ForeignKey(Ordenes_Ingreso, on_delete=models.SET_NULL, null=True)
+    Orden_ID = models.OneToOneField(Ordenes_Ingreso, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.iOrdenDetalle_ID

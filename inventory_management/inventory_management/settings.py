@@ -85,6 +85,16 @@ WSGI_APPLICATION = 'inventory_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "OPTIONS" : {
+            "read_default_file": "D:\Escritorio\inventory-management-sys-backend\aws.cnf"
+        }
+    }
+}
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
