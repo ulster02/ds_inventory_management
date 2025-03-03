@@ -11,8 +11,10 @@ class Clientes(models.Model):
     #Provincia object
     provincia_cliente = models.ForeignKey(Provincias, on_delete=models.SET_NULL, null=True)
     correo_electronico = models.EmailField()
-    #Many to many field - Clientes/Numero
+    
+    #JSONField to include Number and code_contry in a single form
     numero = models.JSONField(db_column=None, null=True, blank=True)
+    #Many to many field - Clientes/Numero
     num_cliente = models.ManyToManyField(Numero, null=True)
 
     def __str__(self):

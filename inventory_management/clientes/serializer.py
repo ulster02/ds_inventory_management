@@ -10,8 +10,6 @@ class NumeroSerializer(serializers.ModelSerializer):
         fields = 'number', 'num_cod_pais'
 
 class ClientesSerializer(serializers.Serializer):
-    #num_cliente = serializers.CharField(write_only=True)
-
     numero = NumeroSerializer()
     nom_cliente = serializers.CharField(max_length=65)
     apellidos_cliente = serializers.CharField(max_length=250)
@@ -20,9 +18,9 @@ class ClientesSerializer(serializers.Serializer):
     #Provincia object
     provincia_cliente = serializers.PrimaryKeyRelatedField(queryset=Provincias.objects.all())
     correo_electronico = serializers.EmailField()
-    #Many to many field - Clientes/Numero
-    #num_cliente = serializers.PrimaryKeyRelatedField(queryset=Provincias.objects.all())
     
+    #Modifying the create method to include the Numero object and compare it with the JSONField 
+    #and be able to create in Number table
     def create(self, validated_data):
         numero_data = validated_data.pop('numero')
         cliente = Clientes.objects.create(**validated_data)
